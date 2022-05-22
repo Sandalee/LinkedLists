@@ -8,6 +8,7 @@ public class Main {
         LinkedList list = new LinkedList();
         list.addLast(20);
         list.addLast(80);
+        list.addFirst(10);
 
 
     }

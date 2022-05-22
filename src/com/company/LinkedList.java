@@ -15,7 +15,21 @@ public class LinkedList {
     private Node last;
 
     //addFirst
+    //private because its implementation detail
+    private boolean isEmpty(){
+        return first==null;
+    }
     public void addFirst(int item){
+        var node = new Node(item);
+        if (isEmpty()){
+            first=node;
+            last=node;
+            // first = last = node;
+        }
+        else{
+            node.next=first;
+            first=node;
+        }
 
     }
     //addLast
@@ -24,7 +38,7 @@ public class LinkedList {
         var node = new Node(item);
 
         //if empty
-        if (first == null){
+        if (isEmpty()){
             first=node;
             last=node;
         }
