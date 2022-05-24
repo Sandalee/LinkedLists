@@ -9,6 +9,7 @@ public class Main {
         list.addLast(20);
         list.addLast(80);
         list.addFirst(10);
+        System.out.println(list.indexOf(80));
 
 
     }

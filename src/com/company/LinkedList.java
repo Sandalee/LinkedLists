@@ -49,8 +49,20 @@ public class LinkedList {
         }
 
     }
+    //indexOf
+    public int indexOf(int item){
+        int index=0; //to keep track of the items
+        var current=first;
+        while(current != null){
+            if (current.value == item) return index;
+            current=current.next;
+            index++;
+        }
+        return -1;
+
+    }
     //deleteFirst
     //deleteLast
     //contains
-    //indexOf
+    //
 }
