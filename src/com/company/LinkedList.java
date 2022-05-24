@@ -64,5 +64,8 @@ public class LinkedList {
     //deleteFirst
     //deleteLast
     //contains
+    public boolean contains(int item){
+        return indexOf(item) != -1;
+    }
     //
 }
