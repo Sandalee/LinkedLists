@@ -9,7 +9,8 @@ public class Main {
         list.addLast(20);
         list.addLast(80);
         list.addFirst(10);
-        System.out.println(list.indexOf(80));
+        list.removeFirst();
+        System.out.println(list.indexOf(20));
         System.out.println(list.contains(40));
 
 

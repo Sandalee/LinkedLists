@@ -62,6 +62,12 @@ public class LinkedList {
 
     }
     //deleteFirst
+    public void removeFirst(){
+        // [10->20->30]
+        var second=first.next;
+        first.next=null; //remove the link btwn 10 & 20
+        first=second;
+    }
     //deleteLast
     //contains
     public boolean contains(int item){
