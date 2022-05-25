@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.NoSuchElementException;
+import java.util.concurrent.atomic.AtomicReference;
+
 public class LinkedList {
     private class Node {
         private int value;
@@ -63,10 +66,18 @@ public class LinkedList {
     }
     //deleteFirst
     public void removeFirst(){
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        //1 element
+        if (first==last)
+            first=last=null;
+        //return;
+
         // [10->20->30]
         var second=first.next;
         first.next=null; //remove the link btwn 10 & 20
-        first=second;
+        first = second;
     }
     //deleteLast
     //contains
