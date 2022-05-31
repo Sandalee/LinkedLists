@@ -80,6 +80,29 @@ public class LinkedList {
         first = second;
     }
     //deleteLast
+    public void removeLast(){
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if(first==last)
+            first=last=null;
+
+
+        var prev=getPrevious(last);
+        last=prev;
+        last.next=null;
+
+    }
+
+    private Node getPrevious(Node node){
+        var current=first;
+        while(current != null){
+            if (current.next == node) return current;
+            current=current.next;
+
+        }
+        return null;
+    }
     //contains
     public boolean contains(int item){
         return indexOf(item) != -1;
