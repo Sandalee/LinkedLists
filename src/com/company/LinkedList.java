@@ -16,6 +16,7 @@ public class LinkedList {
 
     private Node first;
     private Node last;
+    private int size;
 
     //addFirst
     //private because its implementation detail
@@ -33,6 +34,7 @@ public class LinkedList {
             node.next=first;
             first=node;
         }
+        size++;
 
     }
     //addLast
@@ -50,6 +52,8 @@ public class LinkedList {
             last.next=node;
             last=node;
         }
+
+        size++;
 
     }
     //indexOf
@@ -78,19 +82,23 @@ public class LinkedList {
         var second=first.next;
         first.next=null; //remove the link btwn 10 & 20
         first = second;
+        size--;
     }
     //deleteLast
     public void removeLast(){
         if (isEmpty())
             throw new NoSuchElementException();
 
-        if(first==last)
-            first=last=null;
+        if(first==last) {
+            first = last = null;
+        }
+        else {
+            var prev = getPrevious(last);
+            last = prev;
+            last.next = null;
+        }
 
-
-        var prev=getPrevious(last);
-        last=prev;
-        last.next=null;
+        size--;
 
     }
 
@@ -107,5 +115,12 @@ public class LinkedList {
     public boolean contains(int item){
         return indexOf(item) != -1;
     }
-    //
+    //size
+    public int size(){
+        //not practical to travverse through the list
+        //when the list is ~1mill etc
+        //hence the private field 'size'
+        return size;
+
+    }
 }

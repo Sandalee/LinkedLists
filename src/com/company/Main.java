@@ -13,6 +13,7 @@ public class Main {
         list.removeLast();
         System.out.println(list.indexOf(20));
         System.out.println(list.contains(40));
+        System.out.println(list.size());
 
 
     }
