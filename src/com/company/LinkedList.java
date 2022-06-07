@@ -124,7 +124,7 @@ public class LinkedList {
 
     }
 
-    //convert to array
+    //convert list to an array
     public int[] toArray(){
         int[] array=new int[size];
         var current=first;
