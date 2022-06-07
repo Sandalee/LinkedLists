@@ -123,4 +123,17 @@ public class LinkedList {
         return size;
 
     }
+
+    //convert to array
+    public int[] toArray(){
+        int[] array=new int[size];
+        var current=first;
+        var index=0;
+        while(current != null){
+            array[index++]=current.value;
+            //index++;
+            current=current.next;
+        }
+        return array;
+    }
 }
