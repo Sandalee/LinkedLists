@@ -136,4 +136,32 @@ public class LinkedList {
         }
         return array;
     }
+
+    //reverse the list - excercise -16
+    public void reverse(){
+        if (isEmpty()) return;
+        // f       l
+        //[10->20->30]
+        // p   c   n
+        //     p   c  n
+        //         p  c  n ( c=null)
+        // n= c.next
+        // c.next=p
+        var prev = first;
+        var current = first.next;
+
+        while (current != null){
+            var next=current.next;
+            current.next=prev; //swap
+
+            //increment pg
+            prev=current;
+            current=next;
+        }
+
+        last=first;
+        last.next=null;
+        first=prev;
+
+    }
 }
